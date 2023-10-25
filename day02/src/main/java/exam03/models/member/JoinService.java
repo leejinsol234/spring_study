@@ -10,8 +10,8 @@ public class JoinService {
     @Autowired
     private Validator<Member> validator;
     @Autowired
-    @Qualifier("memberDao")
-    //중복되는 Bean 객체가 있는 경우 이름으로 자동 주입할 Bean 객체를 한정하여 정확하게 알려주는 어노테이션
+    //@Qualifier("memberDao")
+    //@Qualifier: 중복되는 Bean 객체가 있는 경우 메서드 이름 또는 한정자의 이름으로 자동 주입할 Bean 객체를 한정하여 정확하게 알려주는 어노테이션
     private MemberDao memberDao3;
 
 /*
@@ -26,7 +26,7 @@ public class JoinService {
 
         validator.check(member);
         memberDao3.register(member);
-        //validator와 memberDao를 의존하고 있음 -> @Autowired
+        //validator와 memberDao를 의존하고 있음 -> @Autowired로 의존성 주입
     }
 
 //    public void join(HttpServletRequest request) {
