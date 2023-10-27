@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/BadRequestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/LengthValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/RequiredValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/ScriptUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/Validator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/AppCtx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex03.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex04.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/DuplicateMemberException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../day04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day04/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2XKhvpyFRWb9edOQ1tpYaoA6izp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "D:/NCS_1400_LJS/work/5. 서버 프로그램 구현/spring_study/day05/src/main/java",
+    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\NCS_1400_LJS\work\5. 서버 프로그램 구현\spring_study\day05\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\NCS_1400_LJS\work\5. 서버 프로그램 구현\spring_study\day05\src\main\java" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Ex04">
+    <configuration name="Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex01" />
+      <module name="day05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex02" />
+      <module name="day05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex03" />
+      <module name="day05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="exam01.Ex04" />
+      <module name="day05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="exam01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Ex04" />
+        <item itemvalue="Application.Ex03" />
+        <item itemvalue="Application.Ex02" />
+        <item itemvalue="Application.Ex01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="" />
+      <created>1698383913685</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698383913685</updated>
+    </task>
+    <servers />
+  </component>
+</project>
