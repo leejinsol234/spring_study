@@ -4,34 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/LengthValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/RequiredValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/ScriptUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/AppCtx.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex02.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex03.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/exam01/Ex04.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/DuplicateMemberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/JoinValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/LoginValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/Member.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day04/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../day04/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="jdbc로 데이터베이스 연결 및 jdbc template으로 쿼리 수행하기">
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/ControllerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/HelloController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/hello.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/config/AppCtx.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/Ex01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/Ex02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/Ex03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exam01/Ex04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/member/MemberDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/member/ServiceManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,23 +37,30 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2XKhvpyFRWb9edOQ1tpYaoA6izp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/NCS_1400_LJS/work/5. 서버 프로그램 구현/spring_study/day05/src/main/java",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NCS_1400_LJS/work/5. 서버 프로그램 구현/spring_study/day05/src/main/java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\NCS_1400_LJS\work\5. 서버 프로그램 구현\spring_study\day05\src\main\java" />
@@ -73,7 +69,7 @@
       <recent name="D:\NCS_1400_LJS\work\5. 서버 프로그램 구현\spring_study\day05\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Ex04">
+  <component name="RunManager" selected="Smart Tomcat.tomcat10">
     <configuration name="Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="exam01.Ex01" />
       <module name="day05" />
@@ -126,8 +122,57 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="main.Ex01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Ex01" />
+      <module name="day05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="tomcat10" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\Administrator\.SmartTomcat\day05\day05" />
+      <option name="contextPath" value="/day05" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="port" value="3000" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/10.1.14" />
+          <option name="path" value="$PROJECT_DIR$/../../../../util/apache-tomcat-10.1.14" />
+          <option name="version" value="10.1.14.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="day05" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Ex01" />
+      <item itemvalue="Application.Ex02" />
+      <item itemvalue="Application.Ex03" />
+      <item itemvalue="Application.Ex04" />
+      <item itemvalue="Application.main.Ex01" />
+      <item itemvalue="Smart Tomcat.tomcat10" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.main.Ex01" />
         <item itemvalue="Application.Ex04" />
         <item itemvalue="Application.Ex03" />
         <item itemvalue="Application.Ex02" />
@@ -144,6 +189,19 @@
       <option name="presentableId" value="Default" />
       <updated>1698383913685</updated>
     </task>
+    <task id="LOCAL-00001" summary="jdbc로 데이터베이스 연결 및 jdbc template으로 쿼리 수행하기">
+      <option name="closed" value="true" />
+      <created>1698396851848</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698396851848</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="jdbc로 데이터베이스 연결 및 jdbc template으로 쿼리 수행하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="jdbc로 데이터베이스 연결 및 jdbc template으로 쿼리 수행하기" />
   </component>
 </project>
