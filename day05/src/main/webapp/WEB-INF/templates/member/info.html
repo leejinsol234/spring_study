@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <body>
+        <th:block th:object="${member}">
+    <!--<section th:object="${member}">은 th:block로 대체할 수 있다.-->
+            <dl>
+                <dt>회원번호</dt>
+                <dd th:text="*{userNo}"></dd>
+            </dl>
+
+            <dl>
+                <dt>아이디</dt>
+                <dd th:utext="*{userId}"></dd>
+            </dl>
+
+            <dl>
+                <dt>비밀번호</dt>
+                <dd th:text="*{userPw}"></dd>
+                <!--[[*{userPw}]]-->
+            </dl>
+
+            <dl>
+                <dt>회원명</dt>
+                <dd th:text="*{userNm}"></dd>
+            </dl>
+
+            <dl>
+                <dt>이메일</dt>
+                <dd th:text="*{email}"></dd>
+            </dl>
+
+            <dl>
+                <dt>휴대전화</dt>
+                <dd th:text="*{mobile}"></dd>
+            </dl>
+        </th:block>
+    </body>
+</html>
