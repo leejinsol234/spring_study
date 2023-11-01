@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th th:if="false">순번</th>
+                    <th></th>
+                    <th>회원번호</th>
+                    <th>아이디</th>
+                    <th>회원명</th>
+                    <th>이메일</th>
+                    <th>가입일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="member,status: ${members}" th:object="${member}">
+                <!--<td th:text="${status.index}"></td>-->
+                <!--<td th:text="${status.count}"></td>-->
+                    <td th:if="false">
+                        <th:block th:text="${status.count}"></th:block>
+                        [<th:block th:text="${status.first}"></th:block>]
+                        [<th:block th:text="${status.last}"></th:block>]
+                    </td>
+                    <td th:switch="${status.even}">
+                        <th:block th:case="true">짝수</th:block>
+                        <th:block th:case="false">홀수</th:block>
+                    </td>
+                    <!--<td th:if="${status.even}">짝수</td>
+                    <td th:if="${status.odd}">홀수</td>-->
+            <!--또는<td th:if="${!status.even}">홀수</td>
+                   <td th:unless="${status.even}">홀수</td>>-->
+                    <td th:text="*{#numbers.formatInteger(userNo,3,'COMMA')}"></td>
+                    <td th:text="*{userId}"></td>
+                    <td th:text="*{userNm}"></td>
+                    <td th:text="*{email}"></td>
+                    <td th:text="*{#temporals.format(regDt,'yyyy.MM.dd')}"></td>
+                                <!--타임 리프 식 객체-->
+                </tr>
+            </tbody>
+        </table>
+
+        <th:block th:text="${@utils.toUpper('abc')}"></th:block>
+
+        <div th:each="num:${#numbers.sequence(1,10,2)}">
+            <div th:text="${num}"></div>
+        </div>
+    </body>
+
+
+</html>

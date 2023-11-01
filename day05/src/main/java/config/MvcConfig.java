@@ -1,5 +1,6 @@
 package config;
 
+import commons.Utils;
 import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -18,6 +19,13 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ApplicationContext ctx; //다형성을 기반으로 가장 상위 인터페이스로 정의한다.
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        //controller없이 view(url)를 연결
+        registry.addViewController("/")
+                .setViewName("main/index.html");
+    }
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -74,6 +82,12 @@ public class MvcConfig implements WebMvcConfigurer {
         ms.setDefaultEncoding("UTF-8");
 
         return ms;
+    }
+
+    //내장 식 객체에 없는 기능은 Spring Bean으로 생성해서 사용할 수 있다.
+    @Bean
+    public Utils utils(){
+        return new Utils();
     }
 
 }
