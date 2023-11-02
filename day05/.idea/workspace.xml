@@ -4,18 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="thymeleaf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/commons/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/layouts/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/outlines/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/outlines/header.html" afterDir="false" />
+    <list default="true" id="0853b480-53ca-4d5b-a4fd-23ad21cc3850" name="Changes" comment="thymeleaf layout, 요청 매핑">
+      <change afterPath="$PROJECT_DIR$/src/main/java/commons/MobileValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/JoinValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/member/RequestJoin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/member/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/member/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/messages/commons.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/messages/commons.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/member/join.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +25,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Record" />
         <option value="Class" />
-        <option value="HTML File" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -52,16 +50,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/NCS_1400_LJS/work/5. 서버 프로그램 구현/spring_study/day05/src",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NCS_1400_LJS/work/5. 서버 프로그램 구현/spring_study/day05/src&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\NCS_1400_LJS\work\5. 서버 프로그램 구현\spring_study\day05\src\main\java" />
@@ -211,14 +209,23 @@
       <option name="project" value="LOCAL" />
       <updated>1698742343865</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="thymeleaf layout, 요청 매핑">
+      <option name="closed" value="true" />
+      <created>1698828704783</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698828704783</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jdbc로 데이터베이스 연결 및 jdbc template으로 쿼리 수행하기" />
     <MESSAGE value="PreparedStatementCreator를 이용한 쿼리 실행, Transaction처리, spring web mvc 시작" />
     <MESSAGE value="thymeleaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="thymeleaf" />
+    <MESSAGE value="thymeleaf layout, 요청 매핑" />
+    <option name="LAST_COMMIT_MESSAGE" value="thymeleaf layout, 요청 매핑" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
