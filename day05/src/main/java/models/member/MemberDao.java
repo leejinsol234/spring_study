@@ -2,16 +2,12 @@ package models.member;
 
 import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,17 +19,6 @@ import java.util.List;
 public class MemberDao {
 
     private final JdbcTemplate jdbcTemplate;
-    /*
-    public boolean register(Member member) {
-
-        String userPw = BCrypt.hashpw(member.getUserPw(), BCrypt.gensalt(12));
-        member.setUserPw(userPw);
-        String sql = "INSERT INTO MEMBER (USER_NO,USER_ID,USER_PW,USER_NM,EMAIL,MOBILE) " +
-                " VALUES (SEQ_MEMBER.nextval,?,?,?,?,?)";
-        int affectedRows = jdbcTemplate.update(sql, member.getUserId(), userPw, member.getUserNm(), member.getEmail(), member.getMobile());
-        return affectedRows > 0;
-    }
-    */
 
     @Transactional
     public boolean register(Member member) {
@@ -57,9 +42,7 @@ public class MemberDao {
             long userNo = keyHolder.getKey().longValue();//상황에 맞게 유동적으로 사용할 수 있도록 Number로 반환한다.
             member.setUserNo(userNo);
         }
-
         return affectedRows > 0;
-
     }
 
     public Member get(String userId) { //queryForObject : 한 개의 레코드만 조회할 때(복수의 데이터나 없는 데이터를 조회하게 되면 오류 발생하므로 서비스 중단을 예방하기 위해 예외처리 필요)

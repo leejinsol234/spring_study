@@ -4,17 +4,18 @@ import commons.BadRequestException;
 import commons.LengthValidator;
 import commons.RequiredValidator;
 import commons.Validator;
+import controllers.member.RequestJoin;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-public class JoinValidator implements Validator<Member>, RequiredValidator, LengthValidator {
+@Component("joinValidator2")
+@RequiredArgsConstructor
+public class JoinValidator implements Validator<RequestJoin>, RequiredValidator, LengthValidator {
 
-    private MemberDao memberDao;
-
-    public void setMemberDao(MemberDao memberDao) {
-        this.memberDao = memberDao;
-    }
+    private final MemberDao memberDao;
 
     @Override
-    public void check(Member member) {
+    public void check(RequestJoin member) {
         String userId = member.getUserId();
         String userPw = member.getUserPw();
         String confirmUserPw = member.getConfirmUserPw();

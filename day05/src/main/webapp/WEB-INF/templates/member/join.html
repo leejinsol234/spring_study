@@ -48,6 +48,14 @@
                 <div th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
             </dd>
         </dl>
+        <dl>
+            <dt>주소</dt>
+            <dd>
+                <input type="text" name="addr.zipcode" placeholder="우편번호" th:field="*{addr.zipcode}">
+                <input type="text" name="addr.address" placeholder="주소" th:field="*{addr.address}">
+                <input type="text" name="addr.addressSub" placeholder="나머지 주소" th:field="*{addr.addressSub}">
+            </dd>
+        </dl>
         <div>
             <input type="checkbox" name="agree" value="true" id="agree" th:field="*{agree}">
             <label for="agree">회원가입 약관에 동의합니다.</label>

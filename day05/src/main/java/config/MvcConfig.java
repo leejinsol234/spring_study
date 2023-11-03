@@ -7,6 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.*;
 import org.thymeleaf.extras.java8time.dialect.Java8TimeDialect;
@@ -16,9 +17,18 @@ import org.thymeleaf.spring6.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
+@Import(DbConfig.class)
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ApplicationContext ctx; //다형성을 기반으로 가장 상위 인터페이스로 정의한다.
+
+//    @Autowired
+//    private JoinValidator joinValidator;
+//
+//    @Override
+//    public Validator getValidator() { //전역 Validator 설정(공통적인 Validator)
+//        return joinValidator;
+//    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

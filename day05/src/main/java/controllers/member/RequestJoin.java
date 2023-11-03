@@ -33,5 +33,8 @@ public class RequestJoin {
     @AssertTrue
     private boolean agree;
 
+    private Address addr;
+    //중첩 커맨드 객체. addr.address 또는 addr.zipcode로 접근한다.
+
     //join.html의 name값과 동일하게 작성하면 알아서 매치해준다.
 }

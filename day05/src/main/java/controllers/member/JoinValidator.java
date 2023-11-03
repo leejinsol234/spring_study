@@ -1,12 +1,16 @@
 package controllers.member;
 
 import commons.MobileValidator;
+import models.member.MemberDao;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
 public class JoinValidator implements Validator, MobileValidator {
+    @Autowired
+    private MemberDao memberDao;
 
     @Override
     public boolean supports(Class<?> clazz) { //검증하고자 하는 커맨드 객체 클래스
@@ -21,13 +25,19 @@ public class JoinValidator implements Validator, MobileValidator {
         추가 검증 부분
         1. 아이디 중복 여부 - 중복 가입X
         2. 비밀번호와 비밀번호 확인 일치 여부
-        3. 휴대전화 번호(필수X) -> 입력되면 형식 체크
+        3. 휴대전화 번호는 필수값이 아니므로 입력되면 형식 체크
         */
 
         String userId = form.getUserId();
         String userPw = form.getUserPw();
         String confirmUserPw = form.getConfirmUserPw();
         String mobile = form.getMobile();
+
+
+        //1. 아이디 중복 여부 - 중복 가입X
+        if(userId != null && !userId.isBlank() && memberDao.exists(userId)){
+            errors.rejectValue("userId","Duplicate");
+        }
 
         //2. 비밀번호와 비밀번호 확인 일치 여부
         if(userPw != null && !userPw.isBlank() && confirmUserPw != null && !confirmUserPw.isBlank() && !userPw.equals(confirmUserPw)){
@@ -40,7 +50,9 @@ public class JoinValidator implements Validator, MobileValidator {
             errors.rejectValue("mobile","Mobile");
         }
 
-        // 필수 항목 검증(userId, userPw, confirmUserPw, userNm, email) 데이터 가져오기
+
+
+        // 기존의 방식으로 필수 항목 검증(userId, userPw, confirmUserPw, userNm, email) 데이터 가져오기
 //        String userId = form.getUserId();
 //        String userPw = form.getUserPw();
 //        String confirmUserPw = form.getConfirmUserPw();

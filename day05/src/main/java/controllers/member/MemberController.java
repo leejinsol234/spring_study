@@ -1,89 +1,29 @@
 package controllers.member;
 
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import models.member.JoinService;
+import models.member.LoginService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/member") //공통 url을 설정할 때
 @RequiredArgsConstructor
 public class MemberController {
-    /*
-    @Autowired
-    private HttpServletRequest request; //spring container 안에 모두 담겨 있으므로 의존성 자동주입만 해도 사용 가능
-    @GetMapping("/member/login")
-    public String login(RequestLogin form, HttpServletResponse response){
-        System.out.println(form);
-        System.out.println(response);
-        System.out.println(request.getParameter("userId"));
-        return "member/login";
-    }
-     */
 
-    /*
-    @GetMapping("/member/join")
-    public String join(Model model){
-        String[] addCss = {"member/test1","member/test2"};
-        List<String> addScript = Arrays.asList("member/script1","member/script2");
-
-        model.addAttribute("addCss",addCss);
-        model.addAttribute("addScript",addScript);
-        model.addAttribute("pageTitle","회원가입");
-        return "member/join";
-    }
-
-    @GetMapping("/member/login")
-    public String login(Model model){
-        model.addAttribute("userId","user99");
-        model.addAttribute("userPw", "비밀번호");
-        return "member/login"; //login.html로 인식
-    }
-
-    @GetMapping("/member/info")
-    public String info(Model model){ //회원 조회
-        Member member = Member.builder()
-                .userNo(1L)
-                .userId("<h1>user01</h1>")
-                .userPw("123456")
-                .userNm("사용자01")
-                .email("user01@test.org")
-                .mobile("010-0000-0000")
-                .build();
-
-        model.addAttribute("member",member);
-
-        return "member/info";
-    }
-    @GetMapping("/member/list")
-    public String members(Model model){
-        List<Member> members = IntStream.rangeClosed(1,10).mapToObj(this::addMember).toList();
-        model.addAttribute("members",members);
-        return "member/list";
-    }
-
-    private Member addMember(int i){
-        return Member.builder()
-                .userNo(i * 1000)
-                .userId("user"+i)
-                .userPw("123456")
-                .userNm("사용자"+i)
-                .email("user"+i+"@test.org")
-                .regDt(LocalDateTime.now())
-                .build();
-    }
-     */
     //@NonNull (final 대신)
     private final JoinValidator joinValidator;
+    private final JoinService joinService;
+    private final LoginValidator loginValidator;
+    private final LoginService loginService;
 
     //요청 방식이 GET일 때
     @GetMapping("/join") // /member/join
-    public String join(@ModelAttribute RequestJoin join){
+    public String join(@ModelAttribute RequestJoin join ){
         //get방식일 때는 요청 데이터가 없으므로 th:field는 커맨드 객체가 없으면 오류 발생. 오류를 발생하지 않도록 하기 위해 비어있는 커맨드 객체 추가 -> 항상 해야 되는 과정이므로 @ModelAttribute로 비어있는 커맨드 객체 추가
 //        RequestJoin requestJoin = new RequestJoin();
 //        model.addAttribute("requestJoin", requestJoin);
@@ -98,6 +38,7 @@ public class MemberController {
         //Errors객체는 커맨드 객체 바로 뒤에 작성해야 한다.
 
         joinValidator.validate(join,errors);
+
         if(errors.hasErrors()){
             // 한 개라도 reject 또는 rejectValue가 호출되면(검증에 실패하면) true가 된다.
             // 검증 실패시 유입
@@ -110,18 +51,36 @@ public class MemberController {
         //model.addAttribute("requestJoin",join);
 
         // 검증 성공 시 회원가입
-        return "redirect:/member/login"; // 응답 헤더를 통해 회원가입 후 로그인페이지로 이동
+        joinService.join(join);
 
+        return "redirect:/member/login"; // 응답 헤더를 통해 회원가입 후 로그인페이지로 이동
     }
 
     @GetMapping("/login") // /member/login
-    public String login(){
+    public String login(@ModelAttribute RequestLogin form ,@CookieValue(required = false,name="saveId") String userId){ //saveId 키값의 이름과 동일해야 한다. 단, @CookieValue(required = false,name="saveId")에서 name값으로 키값과 동일한 이름을 설정해주면 다른 이름으로도 가능하다.
+        if(userId !=null) { //쿠키가 있을 때
+
+        }
         return "member/login";
     }
 
     //로그인 처리
     @PostMapping("/login")
-    public String loginPs(){
-        return "member/login";
+    public String loginPs(@Valid RequestLogin form, Errors errors){
+
+        loginValidator.validate(form, errors);
+
+        if(errors.hasErrors()){
+            return "member/login";
+        }
+        // 유효성 검사 성공 시 로그인 처리
+        loginService.login(form);
+        return "redirect:/"; //메인 페이지로 이동
+    }
+
+    @RequestMapping("/logout") //모든 요청에서 유입될 수 있도록
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/member/login";
     }
 }

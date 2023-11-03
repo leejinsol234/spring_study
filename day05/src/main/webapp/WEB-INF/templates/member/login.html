@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>로그인</title>
-</head>
-<body>
-    <form method="POST"></form>
-        <dl>
-            <dt th:text="#{아이디}">아이디</dt>
-            <dd>
-                <input type="text" name="userId">
-            </dd>
-        </dl>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+    <main layout:fragment="content">
+        <form method="post" th:action="@{/member/login}" th:object="${requestLogin}">
+            <div th:each="err:${#fields.globalErrors()}" th:text="${err}"></div>
+                <dl>
+                    <dt th:text="#{아이디}">아이디</dt>
+                    <dd>
+                        <input type="text" name="userId" th:field="*{userId}">
+                        <div th:each="err:${#fields.errors('userId')}" th:text="${err}"></div>
+                    </dd>
+                </dl>
 
-        <dl>
-            <dt th:text="#{비밀번호}">비밀번호</dt>
-            <dd>
-                <input type="password" name="userPw">
-            </dd>
-        </dl>
-        <button type="submit" th:text="#{로그인}"></button>
-        <div class="links">
-            <a href="#" th:href="@{/member/find_id}" th:text="#{아이디 찾기}">아이디 찾기</a>
-            <a th:href="@{/member/find_pw}" th:text="#{비밀번호 찾기}">비밀번호 찾기</a>
-            <a th:href="@{/member/join?key1={key1}(key1=${userId},key2=value2)}" th:text="#{회원가입}">비밀번호 찾기</a>
-        </div>
-    </form>
-</body>
+                <dl>
+                    <dt th:text="#{비밀번호}">비밀번호</dt>
+                    <dd>
+                        <input type="password" name="userPw" th:field="*{userPw}">
+                        <div th:each="err:${#fields.errors('userPw')}" th:text="${err}"></div>
+                    </dd>
+                </dl>
+            <div>
+                <input type="checkbox" name="saveId" value="true" id="saveId" th:field="*{saveId}">
+                <label for="saveId">아이디 저장</label>
+            </div>
+                <button type="submit" th:text="#{로그인}"></button>
+                <div class="links">
+                    <a href="#" th:href="@{/member/find_id}" th:text="#{아이디 찾기}">아이디 찾기</a>
+                    <a th:href="@{/member/find_pw}" th:text="#{비밀번호 찾기}">비밀번호 찾기</a>
+                    <a th:href="@{/member/join?key1={key1}(key1=${userId},key2=value2)}" th:text="#{회원가입}">비밀번호 찾기</a>
+                </div>
+        </form>
+    </main>
 </html>
