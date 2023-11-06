@@ -19,13 +19,13 @@ public class LoginService {
 
         //로그인 처리
         public void login(RequestLogin form){
-                String userId = form.userId();
+                String userId = form.getUserId();
                 Member member = memberDao.get(userId);
 
                 session.setAttribute("member",member);
 
                 Cookie cookie = new Cookie("saveId", userId);
-                boolean saveId = Objects.requireNonNullElse(form.saveId(),false); //null값일 때는 false로 대체
+                boolean saveId = Objects.requireNonNullElse(form.isSaveId(),false); //null값일 때는 false로 대체
                 if(saveId){ //쿠키 저장
                         cookie.setMaxAge(60 * 60 * 24 * 365);
                 } else { //쿠키 삭제

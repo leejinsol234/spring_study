@@ -28,8 +28,8 @@ public class LoginValidator implements Validator {
         */
 
         //레코드 클래스로부터 검증할 데이터 가져오기
-        String userId = form.userId();
-        String userPw = form.userPw();
+        String userId = form.getUserId();
+        String userPw = form.getUserPw();
 
         Member member = null;
         if(userId != null && !userId.isBlank()){

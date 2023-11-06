@@ -30,11 +30,33 @@ public class MvcConfig implements WebMvcConfigurer {
 //        return joinValidator;
 //    }
 
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(memberOnlyInterceptor())
+                .addPathPatterns("/mypage/**");
+
+        registry.addInterceptor(commonInterceptor())
+                .addPathPatterns("/**"); //main을 포함한 전체 하위 경로
+    }
+
+    @Bean
+    public CommonInterceptor commonInterceptor(){
+        return new CommonInterceptor();
+    }
+
+    @Bean
+    public MemberOnlyInterceptor memberOnlyInterceptor(){
+        return new MemberOnlyInterceptor();
+    }
+
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //controller없이 view(url)를 연결
         registry.addViewController("/")
-                .setViewName("main/index.html");
+                .setViewName("main/index");
+        registry.addViewController("/mypage/**") //mypage를 포함한 하위 모든 경로
+                .setViewName("member/mypage");
     }
 
     @Override

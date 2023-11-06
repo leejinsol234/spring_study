@@ -21,6 +21,11 @@
                 config.ControllerConfig
             </param-value>
         </init-param>
+
+        <multipart-config>
+            <max-file-size>20971520</max-file-size> <!--  1MB * 20 -->
+            <max-request-size>41943040</max-request-size> <!-- 40MB -->
+        </multipart-config>
     </servlet>
 
     <servlet-mapping>
